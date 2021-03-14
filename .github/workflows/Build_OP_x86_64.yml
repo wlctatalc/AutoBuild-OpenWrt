@@ -80,8 +80,9 @@ jobs:
     - name: 自定义安装源
       working-directory: ./openwrt
       run: |
-        git clone https://github.com/kenzok8/litte package/litte
-        git clone https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
+        git clone https://github.com/kenzok8/openwrt-packages package/kenzo
+        git clone https://github.com/kenzok8/small package/small
+    #    git clone https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
 
     - name: 自定义配置文件Build_x86_64
       env:
