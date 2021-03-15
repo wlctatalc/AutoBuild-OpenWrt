@@ -77,21 +77,21 @@ jobs:
         ./scripts/feeds install -a
         ./scripts/feeds install -a
 
-    - name: 自定义插件主题。
-      run: |
-        cd package
-        mkdir openwrt-packages
-        cd openwrt-packages
-        git clone https://github.com/kenzok8/openwrt-packages.git
-        git clone https://github.com/kenzok8/small.git
-        git clone https://github.com/lisaac/luci-app-dockerman.git
-      
-    #- name: 自定义安装源
-    #  working-directory: ./openwrt
+    #- name: 自定义插件主题。
     #  run: |
-    #    git clone https://github.com/kenzok8/openwrt-packages package/kenzo
-    #    git clone https://github.com/kenzok8/small package/small
-    #    git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
+    #    cd package
+    #    mkdir openwrt-packages
+    #    cd openwrt-packages
+    #    git clone https://github.com/kenzok8/openwrt-packages.git
+    #    git clone https://github.com/kenzok8/small.git
+    #    git clone https://github.com/lisaac/luci-app-dockerman.git
+      
+    - name: 自定义安装源
+      working-directory: ./openwrt
+      run: |
+        git clone https://github.com/kenzok8/openwrt-packages package/kenzo
+        git clone https://github.com/kenzok8/small package/small
+        git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
     #    git clone https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
 
     - name: 自定义配置文件Build_x86_64
